@@ -41,7 +41,7 @@ echo -------------------------------------------------
 echo 参数为:${*}
 creat_user $*
 #复制基础文件和插件
-cp -r /usr/CGcode-server/code-server/model/. /home/${USER_NAME}/
+cp -r /usr/CGcode-server/model/. /home/${USER_NAME}/
 #新建并写入配置文件
 cd /home/${USER_NAME}/.config/code-server
 echo bind-addr: 0.0.0.0:${USER_PORT}>config.yaml;
@@ -73,6 +73,9 @@ echo     '"url": "/home/'${USER_NAME}'/WorkPlaceFor'${USER_NAME}'",' >>coder.jso
 echo     '"workspace": false' >>coder.json;
 echo  ' }' >>coder.json;
 echo '}' >>coder.json;
+#开启权限
+chmod +777 /usr/CGcode-server/code-server/bin/code-server
+chmod +777 /usr/CGcode-server/code-server/lib/node
 #通过调用登录自启配置 开启code-server
 su - ${USER_NAME} -c "echo su is succeed!"
 echo 用户创建成功！
