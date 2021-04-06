@@ -1,8 +1,8 @@
 #!/bin/bash
-#一键部署脚本v0.1 Created By Cuichanghe
+#一键部署脚本v0.2 Created By Cuichanghe
 path=$(pwd);
 pathto="/usr/CGcode-server";
-echo 一键部署脚本V0.1 Created By Cuichanghe;
+echo 一键部署脚本V0.2 Created By Cuichanghe;
 echo 请确认目前正在root用户下执行！！！
 echo 请输入第一个用户的用户名:
 read USER_NAME
