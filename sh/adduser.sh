@@ -76,6 +76,7 @@ echo '}' >>coder.json;
 #开启权限
 chmod +777 /usr/CGcode-server/code-server/bin/code-server
 chmod +777 /usr/CGcode-server/code-server/lib/node
+chown -R ${USER_NAME} /home/${USER_NAME}/.local
 #通过调用登录自启配置 开启code-server
 su - ${USER_NAME} -c "echo su is succeed!"
 echo 用户创建成功！
