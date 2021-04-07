@@ -7,6 +7,8 @@ USER_GROUP=root;
 USER_PASSWD=$2;
 #端口号
 USER_PORT=$3;
+#code-server登录密码
+CS_PASSWORD=$4;
 #本地路径
 path=`pwd`;
 # 校验参数
@@ -45,8 +47,15 @@ cp -r /usr/CGcode-server/model/. /home/${USER_NAME}/
 #新建并写入配置文件
 cd /home/${USER_NAME}/.config/code-server
 echo bind-addr: 0.0.0.0:${USER_PORT}>config.yaml;
+if [ -z ${CS_PASSWORD} ]; then
+echo 检测到有code-server登录密码
 echo auth: none >> config.yaml;
 echo password: >> config.yaml;
+else
+echo 检测到没有code-server登录密码
+echo auth: password >> config.yaml;
+echo "password:"${CS_PASSWORD} >> config.yaml;
+fi
 echo cert: false >> config.yaml;
 #复制登录自启动脚本配置
 cp -r /usr/CGcode-server/model/.bash_profile /home/${USER_NAME}/
