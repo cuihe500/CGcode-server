@@ -1,9 +1,9 @@
 # 欢迎使用CGcode-server
 基于[code-server™](https://github.com/cdr/code-server)再次开发
 目前更新到:v0.2  
-安装依赖：Screen
-Centos:
-`yum install screen`
+安装依赖：Screen  
+Centos:  
+`yum install screen`  
 安装步骤：  
 `git clone https://github.com/cuihe500/CGcode-server`  
 `./install.sh`  
