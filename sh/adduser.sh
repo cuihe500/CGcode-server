@@ -47,7 +47,7 @@ cp -r /usr/CGcode-server/model/. /home/${USER_NAME}/
 #新建并写入配置文件
 cd /home/${USER_NAME}/.config/code-server
 echo bind-addr: 0.0.0.0:${USER_PORT}>config.yaml;
-if [ -z ${CS_PASSWORD} ]; then
+if [ -n "$CS_PASSWORD" ]; then
 echo 检测到有code-server登录密码
 echo auth: none >> config.yaml;
 echo password: >> config.yaml;
