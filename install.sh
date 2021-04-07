@@ -10,10 +10,10 @@ echo 请输入第一个用户的SSH登录密码（系统密码）:
 read USER_PASSWORD
 echo 请输入第一个用户的端口号:
 read USER_PORT
-echo 请输入code-server登录密码(留空则为无):
+echo 请输入code-server登录密码（留空则为无）:
 read CS_PASSWORD
-if [[ -z "$USER_NAME" ]] || [[ -z "$USER_PASSWORD" ]] || [[ -z "$USER_PORT" ]]
-echo 参数有误！请检查参数是否正确？
+if [[ -z "$USER_NAME" ]] || [[ -z "$USER_PASSWORD" ]] || [[ -z "$USER_PORT" ]]; then
+echo "参数有误！请检查参数是否正确?"
 exit
 fi
 echo 三秒后将会自动部署CGCode-server... 按下Ctrl+C终止执行
