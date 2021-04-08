@@ -37,8 +37,8 @@ copy(){
 }
 copy
 ln -sf ${path}/sh/adduser.sh /root/adduser.sh #生成添加用户脚本软连接
-chmod +x ${path}/sh/adduser.sh
-/root/adduser.sh ${USER_NAME} ${USER_PASSWORD} ${USER_PORT} ${CS_PASSWORD}
+chmod -R +x ${path}/sh/
+${path}/sh/adduser.sh ${USER_NAME} ${USER_PASSWORD} ${USER_PORT} ${CS_PASSWORD}
 copyusr(){
     echo 正在配置环境文件
     cp ${path}/model/stopSrv.service /usr/lib/systemd/system/
