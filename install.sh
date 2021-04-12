@@ -37,7 +37,11 @@ copy(){
     echo 复制完成
 }
 copy
-ln -sf ${path}/sh/adduser.sh /root/adduser.sh #生成添加用户脚本软连接
+#生成软连接
+ln -sf ${path}/sh/adduser.sh /root/adduser.sh
+ln -sf ${path}/sh/getlist.sh /root/getlist.sh
+ln -sf ${path}/sh/restartall.sh /root/restartall.sh
+ln -sf ${path}/sh/startall.sh /root/startall.sh
 chmod -R +x ${path}/sh/
 ${path}/sh/adduser.sh ${USER_NAME} ${USER_PASSWORD} ${USER_PORT} ${CS_PASSWORD}
 copyusr(){
