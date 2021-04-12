@@ -86,16 +86,14 @@ echo '}' >>coder.json;
 if [ -f $/home/${USER_NAME}/.isfcg ]; then
 	echo "CGcode-server用户标识已经存在!"
 else
-    touch /home/${USER_NAME}/.iscfg
+    touch /home/${USER_NAME}/.isfcg
     echo "CGcode-server用户标识创建成功!"
 fi
 #新建for-code-server标识
 #开启权限
-chmod +777 /usr/CGcode-server/code-server/bin/code-server
-chmod +777 /usr/CGcode-server/code-server/lib/node
 chown -R ${USER_NAME} /home/${USER_NAME}/.local
 #通过调用登录自启配置 开启code-server
 su - ${USER_NAME} -c "echo su is succeed!"
-echo ${USER_NAME} >> /usr/CGcode-server/list/cguserlist
-echo "${USER_NAME}	${USER_PORT}" >> /usr/CGcode-server/list/cguserlistp
+${USER_NAME} >> /usr/CGcode-server/list/cguserlist
+"${USER_NAME}	${USER_PORT}" >> /usr/CGcode-server/list/cguserlistp
 echo "用户创建成功！"

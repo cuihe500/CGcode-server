@@ -47,6 +47,9 @@ copyusr(){
     echo 环境文件配置完成
 }
 copyusr
+#开启权限
+chmod +777 /usr/CGcode-server/code-server/bin/code-server
+chmod +777 /usr/CGcode-server/code-server/lib/node
 echo CGcode-server安装完成 请使用/root/adduser.sh 增加用户
 echo 使用方式为:/root/adduser.sh 用户名 密码 端口号
 echo 玩的开心！Have Fun!
