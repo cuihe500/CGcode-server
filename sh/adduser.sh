@@ -83,7 +83,7 @@ echo     '"workspace": false' >>coder.json;
 echo  ' }' >>coder.json;
 echo '}' >>coder.json;
 #创建用户标识文件.isfcg
-if [ -f $/home/${USER_NAME}/.isfcg ]; then
+if [ -e "/home/${USER_NAME}/.isfcg" ]; then
 	echo "CGcode-server用户标识已经存在!"
 else
     touch /home/${USER_NAME}/.isfcg
