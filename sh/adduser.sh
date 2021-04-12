@@ -94,6 +94,6 @@ fi
 chown -R ${USER_NAME} /home/${USER_NAME}/.local
 #通过调用登录自启配置 开启code-server
 su - ${USER_NAME} -c "echo su is succeed!"
-${USER_NAME} >> /usr/CGcode-server/list/cguserlist
-"${USER_NAME}	${USER_PORT}" >> /usr/CGcode-server/list/cguserlistp
+echo ${USER_NAME} >> /usr/CGcode-server/list/cguserlist
+echo "${USER_NAME}	${USER_PORT}" >> /usr/CGcode-server/list/cguserlistp
 echo "用户创建成功！"
