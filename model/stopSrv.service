@@ -8,7 +8,7 @@ Before=shutdown.target reboot.target halt.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/CGcode-server/uninstall.sh  #your path and filename
+ExecStart=/usr/CGcode-server/sh/uninstall.sh  #your path and filename
 
 [Install]
 WantedBy=halt.target reboot.target shutdown.target
