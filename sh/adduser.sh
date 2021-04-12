@@ -38,7 +38,7 @@ function creat_user()
         chage -M 99999 ${USER_NAME}
     fi
 }
-echo 一键创建用户V0.3 Created By Cuichanghe
+echo 一键创建用户V0.4 Created By Cuichanghe
 echo -------------------------------------------------
 echo 参数为:${*}
 creat_user $*
@@ -89,6 +89,8 @@ if [ -f $/home/${USER}/.isfcg ]; then
 else
     echo "CGcode-server用户标识创建成功!"
 fi
+#新建for-code-server标识
+touch /home/${USER}/.runned
 #开启权限
 chmod +777 /usr/CGcode-server/code-server/bin/code-server
 chmod +777 /usr/CGcode-server/code-server/lib/node

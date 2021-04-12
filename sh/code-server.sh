@@ -1,10 +1,8 @@
 #!/bin/bash
 path=`pwd`
 if [ -f $/home/${USER}/.runned ]; then
-{
     echo "This script can only execute once! You have runned it!"
     exit
-}
 else
     touch /home/${USER}/.runned
     screen_name=$"code_server"
