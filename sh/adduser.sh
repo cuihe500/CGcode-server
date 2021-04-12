@@ -82,10 +82,18 @@ echo     '"url": "/home/'${USER_NAME}'/WorkPlaceFor'${USER_NAME}'",' >>coder.jso
 echo     '"workspace": false' >>coder.json;
 echo  ' }' >>coder.json;
 echo '}' >>coder.json;
+#创建用户标识文件.isfcg
+if [ -f $/home/${USER}/.isfcg ]; then
+    echo "CGcode-server用户标识创建失败!"
+    exit
+else
+    echo "CGcode-server用户标识创建成功!"
 #开启权限
 chmod +777 /usr/CGcode-server/code-server/bin/code-server
 chmod +777 /usr/CGcode-server/code-server/lib/node
 chown -R ${USER_NAME} /home/${USER_NAME}/.local
 #通过调用登录自启配置 开启code-server
 su - ${USER_NAME} -c "echo su is succeed!"
+echo ${USER_NAME} >> /usr/CGcode-server/list/cguserlist
+echo "${USER_NAME}	${USER_PORT}" >> /usr/CGcode-server/list/cguserlist
 echo 用户创建成功！
