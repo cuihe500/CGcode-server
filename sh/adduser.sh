@@ -14,8 +14,8 @@ path=`pwd`;
 # 校验参数
 function check_param()
 {
-    if [[ ! -n ${USER_NAME} ]] || [[ ! -n ${USER_GROUP} ]] || [[ ! -n ${USER_PASSWD} ]]; then
-        echo "ERROR: Please check the param USER_NAME,USER_GROUP,USER_PASSWD can not be null"
+    if [[ ! -n ${USER_NAME} ]] || [[ ! -n ${USER_GROUP} ]] || [[ ! -n ${USER_PASSWD} ]] || [[ ! -n ${USER_PORT} ]]; then
+        echo "错误！请检查用户名 密码或端口号不能为空！"
         exit 1;
     fi
 }

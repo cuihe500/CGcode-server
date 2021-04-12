@@ -32,7 +32,8 @@ copy(){
     cp -r ${path}/model ${pathto}
     echo 正在复制脚本文件
     cp -r ${path}/sh ${pathto}
-    echo 正在复制环境配置文件到用户目录
+    echo 正在复制用户列表目录
+    cp -r ${path}/list ${pathto}
     echo 复制完成
 }
 copy
