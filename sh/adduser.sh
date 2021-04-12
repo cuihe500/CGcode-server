@@ -48,7 +48,7 @@ cp -r /usr/CGcode-server/model/. /home/${USER_NAME}/
 cd /home/${USER_NAME}/.config/code-server
 echo bind-addr: 0.0.0.0:${USER_PORT}>config.yaml;
 if [ -z "$CS_PASSWORD" ]; then
-echo 检测到mei有code-server登录密码
+echo 检测到无code-server登录密码
 echo auth: none >> config.yaml;
 echo password: >> config.yaml;
 else
@@ -88,6 +88,7 @@ if [ -f $/home/${USER}/.isfcg ]; then
     exit
 else
     echo "CGcode-server用户标识创建成功!"
+fi
 #开启权限
 chmod +777 /usr/CGcode-server/code-server/bin/code-server
 chmod +777 /usr/CGcode-server/code-server/lib/node
@@ -96,4 +97,4 @@ chown -R ${USER_NAME} /home/${USER_NAME}/.local
 su - ${USER_NAME} -c "echo su is succeed!"
 echo ${USER_NAME} >> /usr/CGcode-server/list/cguserlist
 echo "${USER_NAME}	${USER_PORT}" >> /usr/CGcode-server/list/cguserlist
-echo 用户创建成功！
+echo "用户创建成功！"
