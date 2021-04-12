@@ -84,13 +84,12 @@ echo  ' }' >>coder.json;
 echo '}' >>coder.json;
 #创建用户标识文件.isfcg
 if [ -f $/home/${USER}/.isfcg ]; then
-    echo "CGcode-server用户标识创建失败!"
-    exit
+	echo "CGcode-server用户标识已经存在!"
 else
+    touch /home/${USER}/.iscfg
     echo "CGcode-server用户标识创建成功!"
 fi
 #新建for-code-server标识
-touch /home/${USER}/.runned
 #开启权限
 chmod +777 /usr/CGcode-server/code-server/bin/code-server
 chmod +777 /usr/CGcode-server/code-server/lib/node
