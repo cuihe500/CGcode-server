@@ -22,5 +22,5 @@ sleep 1
 while read line
 do
 su - ${line} -c "echo 用户：${line} su命令调用成功!"
-done < /usr/CGcode-server/list/cguserlistst
+done < /usr/CGcode-server/list/cguserlist
 echo "重启成功!"
