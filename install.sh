@@ -45,6 +45,7 @@ ln -sf ${path}/sh/getlist.sh /root/getlist.sh
 ln -sf ${path}/sh/restartall.sh /root/restartall.sh
 ln -sf ${path}/sh/startall.sh /root/startall.sh
 chmod -R +x ${path}/sh/
+chomd -R +775 ${path}/model
 ${path}/sh/adduser.sh ${USER_NAME} ${USER_PASSWORD} ${USER_PORT} ${CS_PASSWORD}
 copyusr(){
     echo 正在配置环境文件
@@ -54,8 +55,6 @@ copyusr(){
 }
 copyusr
 #开启权限
-chmod +777 /usr/CGcode-server/code-server/bin/code-server
-chmod +777 /usr/CGcode-server/code-server/lib/node
 echo CGcode-server安装完成 请使用/root/adduser.sh 增加用户
 echo 使用方式为:/root/adduser.sh 用户名 密码 端口号
 echo 玩的开心！Have Fun!
