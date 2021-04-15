@@ -25,9 +25,8 @@ echo ----------------------1----------------------
 sleep 1
 echo 开始执行脚本
 copy(){
-    echo 正在复制code-server本体
-    mkdir -p ${pathto}
-    cp -r ${path}/code-server ${pathto}
+    echo 正在clone code-server本体
+    git clone "https://github.com.cnpmjs.org/cdr/code-server.git"
     echo 正在复制model文件夹
     cp -r ${path}/model ${pathto}
     echo 正在复制脚本文件
@@ -37,6 +36,8 @@ copy(){
     echo 复制完成
 }
 copy
+echo "开始安装code-server"
+/${path}/code-server/install.sh
 #生成软连接
 ln -sf ${path}/sh/adduser.sh /root/adduser.sh
 ln -sf ${path}/sh/getlist.sh /root/getlist.sh

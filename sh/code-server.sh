@@ -7,10 +7,7 @@ else
     touch /home/${USER}/.runned
     screen_name=$"code_server"
     screen -dmS $screen_name
-    cmd=$"cd /usr/CGcode-server/code-server/bin"
-    screen -x -S $screen_name -p 0 -X stuff "$cmd"
-    screen -x -S $screen_name -p 0 -X stuff $'\n'
-    cmd=$"./code-server"
+    cmd=$"code-server"
     screen -x -S $screen_name -p 0 -X stuff "$cmd"
     screen -x -S $screen_name -p 0 -X stuff $'\n'
     echo code-server is running!
