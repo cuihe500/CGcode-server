@@ -27,6 +27,7 @@ echo 开始执行脚本
 copy(){
     echo 正在clone code-server本体
     git clone "https://github.com.cnpmjs.org/cdr/code-server.git"
+    mkdir /usr/CGcode-server
     echo 正在复制model文件夹
     cp -r ${path}/model ${pathto}
     echo 正在复制脚本文件
