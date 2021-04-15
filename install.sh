@@ -45,7 +45,7 @@ ln -sf ${path}/sh/getlist.sh /root/getlist.sh
 ln -sf ${path}/sh/restartall.sh /root/restartall.sh
 ln -sf ${path}/sh/startall.sh /root/startall.sh
 chmod -R +x ${path}/sh/
-chomd -R +775 ${path}/model
+chmod -R +775 ${path}/model
 ${path}/sh/adduser.sh ${USER_NAME} ${USER_PASSWORD} ${USER_PORT} ${CS_PASSWORD}
 copyusr(){
     echo 正在配置环境文件
